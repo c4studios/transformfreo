@@ -35,25 +35,8 @@
       "usePhone": true,
       "link": "",
       "linkLabel": ""
-    },
-    {
-      "icon": "instagram",
-      "title": "Find Us on Instagram",
-      "description": "Follow us on Instagram for updates",
-      "usePhone": false,
-      "link": "https://www.instagram.com/transformfreo?igsh=NXRveXByYm9jMHAy&utm_source=qr",
-      "linkLabel": "Follow @transformfreo"
     }
   ],
-  "giving": {
-    "heading": "Support Our Mission",
-    "text": "We believe in giving out of conviction and not out of compulsion. If you feel convicted to give to us, thank you!",
-    "detailsHeading": "Bank Transfer Details",
-    "detailsText": "You can support Transform Fremantle through a direct bank transfer:",
-    "accountName": "Transform Fremantle",
-    "bsb": "116879",
-    "accountNumber": "454199464"
-  },
   "location": {
     "heading": "Based in Fremantle, WA",
     "text": "We're a local movement serving the City of Fremantle and surrounding areas. Our prayer gatherings take place at various locations across the city."

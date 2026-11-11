@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import ContentSection from '../components/ContentSection';
-import { Mail, Send, MapPin, Heart, Building2, Instagram } from 'lucide-react';
+import { Mail, Send, MapPin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -269,46 +269,6 @@ export default function Connect() {
                                 </div>
                             );
                         })}
-                    </div>
-                </div>
-            </ContentSection>
-
-            <ContentSection className="py-12">
-                <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-slate-200">
-                    <div className="text-center mb-10">
-                        <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#1E3A5F] to-[#7C6A9F] rounded-2xl mb-4">
-                            <Heart className="w-8 h-8 text-white" strokeWidth={2} />
-                        </div>
-                        <h2 className="text-3xl font-bold text-[#1E3A5F] mb-3">{content.giving?.heading}</h2>
-                        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-6">
-                            {content.giving?.text}
-                        </p>
-                    </div>
-
-                    <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-8 border-2 border-[#E8C468]">
-                        <div className="flex items-start gap-4">
-                            <Building2 className="w-6 h-6 text-[#7C6A9F] mt-1 flex-shrink-0" strokeWidth={2} />
-                            <div className="flex-1">
-                                <h3 className="text-xl font-bold text-[#1E3A5F] mb-2">{content.giving?.detailsHeading}</h3>
-                                <p className="text-slate-600 mb-4">
-                                    {content.giving?.detailsText}
-                                </p>
-                                <div className="space-y-2 text-slate-700">
-                                    <div className="flex flex-col sm:flex-row sm:gap-2">
-                                        <span className="font-semibold min-w-32">Account Name:</span>
-                                        <span>{content.giving?.accountName}</span>
-                                    </div>
-                                    <div className="flex flex-col sm:flex-row sm:gap-2">
-                                        <span className="font-semibold min-w-32">BSB:</span>
-                                        <span>{content.giving?.bsb}</span>
-                                    </div>
-                                    <div className="flex flex-col sm:flex-row sm:gap-2">
-                                        <span className="font-semibold min-w-32">Account Number:</span>
-                                        <span>{content.giving?.accountNumber}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </ContentSection>

@@ -70,6 +70,11 @@ collections:
             fields:
               - { label: Heading, name: heading, widget: string }
               - { label: Intro text, name: intro, widget: text }
+              - label: Note under the meetings
+                name: closingNote
+                widget: text
+                required: false
+                hint: Optional. Shows under the list of meetings, e.g. holiday changes. Clear it to hide it.
 
           - label: Prayer meetings
             name: meetings
@@ -99,7 +104,7 @@ collections:
             widget: object
             fields:
               - { label: Heading, name: heading, widget: string }
-              - { label: Quote, name: quote, widget: text }
+              - { label: Quote, name: quote, widget: text, required: false, hint: Optional. Leave empty to hide it. }
               - { label: Body text, name: body, widget: text }
 
       # ─────────────────────────────────────────────────────────────────────
@@ -203,44 +208,10 @@ collections:
               - { label: Text, name: text, widget: text }
 
       # ─────────────────────────────────────────────────────────────────────
-      - name: resources_page
-        label: Resources page wording
-        file: src/content/resources.json
-        description: The wording on the Resources page. The booklets themselves are under "Resource booklets".
-        fields:
-          - label: Banner
-            name: hero
-            widget: object
-            fields:
-              - { label: Heading, name: title, widget: string }
-              - { label: Line underneath, name: subtitle, widget: string, required: false }
-              - { label: Background photo, name: image, widget: image, required: false }
-
-          - label: Intro panel
-            name: intro
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Text, name: text, widget: text }
-
-          - label: Default label under a booklet title
-            name: fallbackLabel
-            widget: string
-            hint: Used when a booklet has no description of its own.
-
-          - label: Closing panel
-            name: cta
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Text, name: text, widget: text }
-              - { label: Small note, name: note, widget: string, required: false }
-
-      # ─────────────────────────────────────────────────────────────────────
       - name: connect
         label: Connect
         file: src/content/connect.json
-        description: Contact form wording, phone number, social links and bank details.
+        description: Contact form wording, phone number and ways to get in touch.
         fields:
           - label: Banner
             name: hero
@@ -337,24 +308,6 @@ collections:
                 hint: Optional. A full web address starting with https://
               - { label: Button text, name: linkLabel, widget: string, required: false }
 
-          - label: Giving & bank details
-            name: giving
-            widget: object
-            fields:
-              - { label: Heading, name: heading, widget: string }
-              - { label: Text, name: text, widget: text }
-              - { label: Bank panel heading, name: detailsHeading, widget: string }
-              - { label: Bank panel text, name: detailsText, widget: text }
-              - { label: Account name, name: accountName, widget: string }
-              - label: BSB
-                name: bsb
-                widget: string
-                pattern: ['^[0-9]{6}$', 'A BSB is exactly 6 digits, no dash.']
-              - label: Account number
-                name: accountNumber
-                widget: string
-                pattern: ['^[0-9]{5,10}$', 'An account number is 5 to 10 digits.']
-
           - label: Location panel
             name: location
             widget: object
@@ -368,50 +321,6 @@ collections:
             fields:
               - { label: Heading, name: heading, widget: string }
               - { label: Text, name: text, widget: text }
-
-  # ───────────────────────────────────────────────────────────────────────────
-  - name: resources
-    label: Resource booklets
-    files:
-      - name: booklets
-        label: Resource booklets
-        file: src/resources/resources.overrides.json
-        description: >-
-          Upload a PDF and give it a title. The download list on the Resources
-          page is built from this, in the order shown here.
-        fields:
-          - label: Booklets
-            name: items
-            label_singular: booklet
-            widget: list
-            summary: '{{fields.displayName}}'
-            fields:
-              - label: PDF file
-                name: filename
-                widget: file
-                media_folder: /public/files
-                public_folder: /files
-                media_library:
-                  config:
-                    max_file_size: 26214400
-                hint: Choose an existing PDF or upload a new one. Max 25 MB.
-              - { label: Title shown on the website, name: displayName, widget: string }
-              - label: Edition
-                name: edition
-                widget: string
-                required: false
-                hint: 'Optional, for your own reference. For example: January 2026 Edition'
-              - label: Short description
-                name: description
-                widget: string
-                required: false
-                hint: Optional. Replaces "PDF Document" underneath the title.
-              - label: Hide from the website
-                name: deprecated
-                widget: boolean
-                required: false
-                default: false
-                hint: Keeps the file but takes it off the Resources page.
 
   # ───────────────────────────────────────────────────────────────────────────
   - name: settings
@@ -437,8 +346,7 @@ collections:
               - { label: 'Page 1 (home)', name: AboutUs, widget: string }
               - { label: 'Page 2', name: StatementOfFaith, widget: string }
               - { label: 'Page 3', name: VisionAndAim, widget: string }
-              - { label: 'Page 4', name: Resources, widget: string }
-              - { label: 'Page 5', name: Connect, widget: string }
+              - { label: 'Page 4', name: Connect, widget: string }
 
           - label: Footer
             name: footer

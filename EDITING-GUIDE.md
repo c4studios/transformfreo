@@ -22,8 +22,7 @@ Bookmark that address. It's the only one you need.
 
 Down the left is a list of what you can change:
 
-- **Pages** — the words and photos on each of the five pages
-- **Resource booklets** — the PDFs people download
+- **Pages** — the words and photos on each of the four pages
 - **Site-wide** — the logo, the menu, and the footer that appear on every page
 
 Click any of them, change what you want, and press **Save**.
@@ -69,28 +68,13 @@ tappable on a phone. Change both.
 
 You only enter the number here. It updates everywhere it appears.
 
-### Change the bank details
+### Add a holiday notice
 
-**Pages → Connect → Giving & bank details**
+**Pages → About Us → Prayer meetings heading → Note under the meetings**
 
-The BSB must be six digits and the account number five to ten. The editor will
-tell you if something doesn't look right.
-
-Read these back twice before saving. It's the one thing on the site where a typo
-costs real money.
-
-### Add a booklet
-
-**Resource booklets**
-
-Click **Add booklet**, choose your PDF, and give it a title. The title is what
-people see on the website, so write it properly — "What is Salvation? And What
-Should I do Next?" rather than a filename.
-
-Drag booklets to change the order they appear in.
-
-To take a booklet down without deleting it, tick **Hide from the website**. You
-can put it back later.
+Whatever you type here shows under the list of meetings. It's handy for
+Christmas or Easter changes. Clear the box when it no longer applies and the
+note disappears.
 
 ### Change a photo
 

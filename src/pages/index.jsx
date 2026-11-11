@@ -6,24 +6,20 @@ import StatementOfFaith from "./StatementOfFaith";
 
 import VisionAndAim from "./VisionAndAim";
 
-import Resources from "./Resources";
-
 import Connect from "./Connect";
 
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
-    
+
     AboutUs: AboutUs,
-    
+
     StatementOfFaith: StatementOfFaith,
-    
+
     VisionAndAim: VisionAndAim,
-    
-    Resources: Resources,
-    
+
     Connect: Connect,
-    
+
 }
 
 function _getCurrentPage(url) {
@@ -43,24 +39,26 @@ function _getCurrentPage(url) {
 function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
-    
+
     return (
         <Layout currentPageName={currentPage}>
-            <Routes>            
-                
+            <Routes>
+
                     <Route path="/" element={<AboutUs />} />
-                
-                
+
+
                 <Route path="/AboutUs" element={<AboutUs />} />
-                
+
                 <Route path="/StatementOfFaith" element={<StatementOfFaith />} />
-                
+
                 <Route path="/VisionAndAim" element={<VisionAndAim />} />
-                
-                <Route path="/Resources" element={<Resources />} />
-                
+
+                {/* The Resources page was taken down in November 2026 at the
+                    client's request. Old links land on the home page. */}
+                <Route path="/Resources" element={<Navigate to="/" replace />} />
+
                 <Route path="/Connect" element={<Connect />} />
-                
+
             </Routes>
         </Layout>
     );

@@ -38,7 +38,6 @@ edits those files. A save is a commit; a commit is a deploy.
 | About Us (home) | `src/content/about.json` |
 | Statement of Faith | `src/content/statement-of-faith.json` |
 | Vision & Aim | `src/content/vision.json` |
-| Resources (wording) | `src/content/resources.json` |
 | Connect | `src/content/connect.json` |
 | Header, footer, menu, logo | `src/content/site.json` |
 
@@ -65,6 +64,12 @@ Login goes through GitHub via two serverless functions, `api/auth.js` and
 `GITHUB_OAUTH_CLIENT_SECRET` set in Vercel. See HANDOVER.md §5.
 
 ## Resource PDFs
+
+The Resources page was taken down in November 2026 at the client's request.
+The PDFs are still in `public/files/` and the build pipeline below still runs,
+so the page can be restored from git history (`src/pages/Resources.jsx`,
+`src/content/resources.json`) without rebuilding anything. The booklet list is
+no longer in the CMS, and `/Resources` redirects to the home page.
 
 PDFs live in `public/files/`. Don't hardcode PDF URLs in components.
 

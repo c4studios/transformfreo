@@ -97,15 +97,23 @@ export default function AboutUs() {
                         </div>
                     ))}
                 </div>
+
+                {content.meetingsSection?.closingNote && (
+                    <p className="mt-8 text-center text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed text-balance">
+                        {content.meetingsSection.closingNote}
+                    </p>
+                )}
             </ContentSection>
 
             <ContentSection className="py-12">
                 <div className="bg-gradient-to-br from-[#7C6A9F] to-[#1E3A5F] rounded-2xl p-8 md:p-12 text-white shadow-2xl">
                     <div className="text-center max-w-3xl mx-auto">
                         <h3 className="text-2xl font-bold mb-4">{content.unity?.heading}</h3>
-                        <p className="text-lg text-slate-200 leading-relaxed mb-6">
-                            {content.unity?.quote}
-                        </p>
+                        {content.unity?.quote && (
+                            <p className="text-lg text-slate-200 leading-relaxed mb-6">
+                                {content.unity.quote}
+                            </p>
+                        )}
                         <p className="text-slate-300 leading-relaxed">
                             {content.unity?.body}
                         </p>

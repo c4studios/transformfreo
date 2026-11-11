@@ -8,7 +8,7 @@ import site from '@/content/site.json';
 
 // Route keys are fixed in code so a content edit can never break navigation.
 // site.json only supplies the label shown for each one.
-const NAV_ROUTES = ['AboutUs', 'StatementOfFaith', 'VisionAndAim', 'Resources', 'Connect'];
+const NAV_ROUTES = ['AboutUs', 'StatementOfFaith', 'VisionAndAim', 'Connect'];
 
 export default function Layout({ children, currentPageName }) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

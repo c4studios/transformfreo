@@ -31,10 +31,8 @@ history of every edit is in the repository.
 | About Us (home) | `src/content/about.json` |
 | Statement of Faith | `src/content/statement-of-faith.json` |
 | Vision & Aim | `src/content/vision.json` |
-| Resources (wording) | `src/content/resources.json` |
 | Connect | `src/content/connect.json` |
 | Header, footer, menu, logo | `src/content/site.json` |
-| Resource booklet list | `src/resources/resources.overrides.json` |
 
 Photos live in `public/images/`. Booklet PDFs live in `public/files/`. The
 original full-resolution logo is kept at `public/brand/logo-1024.png` for print
@@ -197,11 +195,10 @@ serving from the new project.
 
 ### Step 7 — Close the loop
 
-- Load `https://transformfreo.com` and click through all five pages.
+- Load `https://transformfreo.com` and click through all four pages.
 - Sign in at `https://transformfreo.com/admin`, make a small edit, save, and
   confirm it appears on the site a minute or two later.
 - Send a test message through the Connect form and confirm it arrives.
-- Download one booklet from the Resources page.
 - Only then, delete the old Vercel project. Keep the old GitHub access until
   everyone is satisfied.
 
@@ -259,14 +256,11 @@ Recorded here so nobody goes looking for problems that are already fixed.
 **Update the editor.** Bump the `@sveltia/cms` version in `package.json`, run
 `npm install`, and push. Check `/admin` still loads before you leave it.
 
-**Add a booklet.** Easiest through `/admin` → Resource booklets. By hand: drop
-the PDF in `public/files/` and add an entry to
-`src/resources/resources.overrides.json`. The build hashes the file and adds a
-`?v=` to its URL, so a replaced PDF is never served stale from cache.
-
-**A PDF in `public/files/` that isn't in the booklet list won't show on the
-site.** The build prints a note when that happens. This is deliberate, so the
-list in the editor matches what visitors see.
+**The Resources page is gone.** It was taken down in November 2026 at the
+client's request. The PDFs are still in `public/files/` and the `prebuild`
+resource scripts still run, so the page can be restored from git history
+(`src/pages/Resources.jsx`, `src/content/resources.json`). The booklet list is
+no longer in the CMS, and `/Resources` redirects to the home page.
 
 **Run it locally.**
 
